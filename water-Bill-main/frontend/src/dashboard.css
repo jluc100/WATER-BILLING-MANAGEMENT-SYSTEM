@@ -1,0 +1,126 @@
+/* Smart Water Bill — dashboard polish */
+
+.dashboard-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-hero {
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.12), rgba(34, 211, 238, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.page-badge {
+  background: rgba(14, 116, 144, 0.2);
+  color: #a5f3fc;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.kpi-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  opacity: 0.85;
+}
+
+.kpi-card.success::before { background: linear-gradient(90deg, #10b981, #34d399); }
+.kpi-card.warning::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.kpi-card.danger::before { background: linear-gradient(90deg, #ef4444, #f87171); }
+
+.kpi-card .value {
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+}
+
+.card {
+  box-shadow: 0 8px 32px rgba(3, 11, 23, 0.2);
+  transition: border-color 0.2s;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f0f9ff;
+}
+
+.main {
+  padding: 24px;
+  background: radial-gradient(ellipse at top right, rgba(14, 116, 144, 0.08), transparent 50%);
+}
+
+.layout-main-wrap .main {
+  min-height: calc(100vh - 56px);
+}
+
+/* Admin light panel — brand teal */
+.admin-page {
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.segment-active {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.profile-avatar {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+}
+
+.sidebar-user-avatar {
+  background: linear-gradient(135deg, var(--primary), #6366f1) !important;
+}
+
+.sidebar-link.active {
+  background: rgba(14, 116, 144, 0.35);
+  box-shadow: inset 3px 0 0 var(--primary-light);
+}
+
+.topbar {
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--muted);
+}
+
+.empty-state p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .main { padding: 16px; }
+  .page-hero { padding: 18px; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+}

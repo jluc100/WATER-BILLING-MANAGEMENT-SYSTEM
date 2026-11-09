@@ -1,0 +1,335 @@
+/* Smart Water Bill — landing layout (compact, responsive) */
+
+.landing-page {
+  overflow-x: hidden;
+}
+
+.landing-page section {
+  scroll-margin-top: 72px;
+}
+
+/* Tighter vertical rhythm — less empty space */
+.landing-page #stats,
+.landing-page #features,
+.landing-page #how-it-works {
+  padding-top: 2.25rem !important;
+  padding-bottom: 2.25rem !important;
+}
+
+.landing-page .landing-hero-wrap {
+  padding-top: 1.25rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+@media (min-width: 1024px) {
+  .landing-page .landing-hero-wrap {
+    padding-top: 2rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+}
+
+.landing-page .landing-hero-dots {
+  padding-bottom: 1.5rem !important;
+}
+
+.landing-page .landing-cta-section {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+.landing-page footer .mx-auto {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.landing-page .landing-stats-card,
+.landing-page #features .reveal,
+.landing-page #how-it-works .reveal {
+  padding: 1.25rem !important;
+}
+
+.landing-page #how-it-works h2 {
+  margin-top: 0.5rem !important;
+}
+
+.landing-page #how-it-works .mt-10 {
+  margin-top: 1.5rem !important;
+}
+
+.landing-page #how-it-works .mt-14 {
+  margin-top: 1.75rem !important;
+}
+
+/* ── Navbar ── */
+.landing-nav {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.landing-nav-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.landing-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0e7490;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.landing-logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.landing-logo-text strong {
+  font-size: 1rem;
+  color: #0b1b33;
+  white-space: nowrap;
+}
+
+.landing-logo-text span {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.landing-logo-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #0e7490, #22d3ee);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.landing-nav-links {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.landing-nav-links a:hover {
+  color: #0e7490;
+}
+
+.landing-nav-actions {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.landing-nav-signin {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.landing-nav-signin:hover {
+  background: #f8fafc;
+}
+
+.landing-nav-register {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: #0e7490;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(14, 116, 144, 0.35);
+}
+
+.landing-nav-register:hover {
+  background: #0c6378;
+}
+
+/* Hamburger — visible on tablet & mobile */
+.landing-hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.landing-hamburger-btn span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #0b1b33;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.landing-hamburger-btn.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.landing-hamburger-btn.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.landing-hamburger-btn.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.landing-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(11, 27, 51, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.landing-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.landing-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 95;
+  width: min(300px, 88vw);
+  height: 100%;
+  background: white;
+  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.25rem 1.5rem;
+}
+
+.landing-drawer.is-open {
+  transform: translateX(0);
+}
+
+.landing-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 0.5rem;
+}
+
+.landing-drawer-title {
+  font-weight: 800;
+  color: #0b1b33;
+  font-size: 1rem;
+}
+
+.landing-drawer-close {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.landing-drawer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.landing-drawer nav a {
+  padding: 12px 10px;
+  border-radius: 10px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.landing-drawer nav a:hover {
+  background: #f0f9ff;
+  color: #0e7490;
+}
+
+.landing-drawer-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.landing-drawer-footer .landing-nav-register,
+.landing-drawer-footer .landing-nav-signin {
+  text-align: center;
+  padding: 12px;
+}
+
+@media (min-width: 768px) {
+  .landing-nav-inner {
+    height: 64px;
+    padding: 0 1.5rem;
+  }
+
+  .landing-nav-links,
+  .landing-nav-actions {
+    display: flex;
+  }
+
+  .landing-hamburger-btn,
+  .landing-drawer,
+  .landing-drawer-backdrop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-logo-text strong {
+    font-size: 1.1rem;
+  }
+}
+
+body.landing-menu-open {
+  overflow: hidden;
+}
